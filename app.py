@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 import streamlit as st
 import pandas as pd
 
 
-# In[4]:
+# In[2]:
 
 
 final = pd.read_csv("cluster.csv",index_col=0)
