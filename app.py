@@ -27,17 +27,26 @@ def main():
     <h1 style ="color:black;text-align:center;">Similar Movie App</h1> 
     </div> 
     """
+    
+    page_bg_img = '''
+    <style>
+    body{
+    background-image: url("https://mocah.org/uploads/posts/4533539-pulp-fiction-movies-simple-background-skull-drawing-white-background.jpg");
+    background-size: cover;}
+    </style>
+    '''
       
     # display the front end aspect
-    st.markdown(html_temp, unsafe_allow_html=True) 
-      
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+    st.markdown(html_temp,unsafe_allow_html=True) 
+    
     # select boxes for movie title
     title = st.selectbox('Movie',(final["title"]))
     result = ""
     links = ""
     
     # click on "Find me Similar Movies" and end up with similar movie and its IMDb link
-    if st.button("Find me Similar Movies"):
+    if st.button("Find Similar Movies"):
         result = cluster(title)
         links = link(title)
         for i in range(len(result)):   
@@ -48,7 +57,7 @@ if __name__=='__main__':
     main()
 
 
-# In[5]:
+# In[3]:
 
 
 # convert streamlit to app.py to run on jupyter notebook
