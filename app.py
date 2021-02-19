@@ -39,14 +39,15 @@ def main():
     # display the front end aspect
     st.markdown(page_bg_img, unsafe_allow_html=True)
     st.markdown(html_temp,unsafe_allow_html=True) 
+    st.sidebar.markdown("![Alt Text](https://media.giphy.com/media/RlH7GlyiGKJ1ciAbO0/giphy.gif)")
     
     # select boxes for movie title
-    title = st.selectbox('Movie',(final["title"]))
+    title = st.selectbox('Pick Your Movie',(final["title"]))
     result = ""
     links = ""
     
     # click on "Find me Similar Movies" and end up with similar movie and its IMDb link
-    if st.button("Find Similar Movies"):
+    if st.button("Find Similar Movie"):
         result = cluster(title)
         links = link(title)
         for i in range(len(result)):   
